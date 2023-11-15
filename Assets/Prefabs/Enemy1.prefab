@@ -98,7 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ba98a6bfaf3ac4469fcf59bc249d03c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyBall: {fileID: 0}
   speedY: -4
   speedY2: -2
   speedX2: -1

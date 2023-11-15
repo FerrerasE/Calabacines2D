@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cantidadPuntos: 1
-  puntaje: {fileID: 0}
+  puntaje: {fileID: 5283550646809129314, guid: e0dd364b8520b054dbfdaaf3bdbbfe26, type: 3}
   speedY: -0.5
 --- !u!61 &6981267455731478220
 BoxCollider2D:

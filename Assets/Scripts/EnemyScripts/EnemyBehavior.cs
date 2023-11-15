@@ -14,6 +14,7 @@ public class EnemyBehavior : MonoBehaviour
 
 
     [SerializeField] private float randomTime =0f ;
+    [SerializeField] private float tiempoMuerte= 1f;
 
     private void Start() 
     {
@@ -65,10 +66,12 @@ public class EnemyBehavior : MonoBehaviour
 
    
         private void OnCollisionEnter2D(Collision2D other) {
-            if (other.gameObject.CompareTag("player"))
+            if (other.gameObject.CompareTag("Player"))
             {
                 Destroy(gameObject);
+                
             }
         }
+
     
 }

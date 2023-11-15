@@ -13,7 +13,8 @@ public class CharacterMovement : MonoBehaviour
     private bool isFacingRight = true; //respresenta el valor de mirar a la derecha
     private Rigidbody2D rb; //referencia al componente Rigibody2D del personaje
 
-    private Puntaje punt; // referencia al gameObject puntaje
+    [SerializeField] private float perdidaPunt = 1;
+    [SerializeField] private Puntaje puntaje;
     
 
     [SerializeField] private float jumpForce; // fuerza que aplicamos al saltar
@@ -24,7 +25,7 @@ public class CharacterMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        punt = GetComponent<Puntaje>();
+        
         rb = GetComponent<Rigidbody2D>(); //Obtenemos la referencia al Rigibody2D del personaje
         limitRangeX = 8.50f;
         limitRangeY = 5.1f;
@@ -100,7 +101,12 @@ public class CharacterMovement : MonoBehaviour
         // este if bajara un punto si el personaje colisiona con un enemigo
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            punt.puntos -= 1;
+            puntaje.PerderPuntos(perdidaPunt);
+            //este if indica si los puntos es menor o igual a 0, el personaje morira
+            if (puntaje.puntos <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
 
         isGrounded = true;
